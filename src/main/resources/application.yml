@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: benchmark-parser
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/benchmark_reports
+    driver-class-name: org.postgresql.Driver
+    username:
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
