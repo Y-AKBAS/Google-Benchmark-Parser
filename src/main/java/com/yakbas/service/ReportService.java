@@ -1,8 +1,10 @@
-package com.yakbas.util;
+package com.yakbas.service;
 
 import com.yakbas.report.Report;
+import com.yakbas.util.Jackson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -13,12 +15,13 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class ReportReader {
+@Service
+public class ReportService {
 
-    private static final Logger logger = LoggerFactory.getLogger(ReportReader.class);
+    private static final Logger logger = LoggerFactory.getLogger(ReportService.class);
     private static final Path REPORT_PATH = Paths.get("src", "main", "resources", "report");
 
-    public static List<Report> getReports() {
+    public List<Report> readReports() {
         try (Stream<Path> pathStream = Files.walk(REPORT_PATH)) {
 
             return pathStream.map(Path::toFile)

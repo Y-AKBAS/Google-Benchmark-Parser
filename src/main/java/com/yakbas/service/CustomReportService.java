@@ -4,7 +4,6 @@ import com.yakbas.db.domain.CustomReportEntity;
 import com.yakbas.report.Benchmark;
 import com.yakbas.report.Report;
 import com.yakbas.util.Jackson;
-import com.yakbas.util.ReportReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -23,7 +22,7 @@ import java.util.stream.Stream;
 @Service
 public class CustomReportService {
 
-    private static final Logger logger = LoggerFactory.getLogger(ReportReader.class);
+    private static final Logger logger = LoggerFactory.getLogger(CustomReportService.class);
 
     private static final Path REPORT_PATH = Paths.get("src", "main", "resources", "report");
     private static final Path CUSTOM_REPORT_PATH = Paths.get("src", "main", "resources", "custom_report");
